@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testng-results failed="0" passed="1" skipped="0" total="1">
+    <suite duration-ms="21102" name="io.cucumber.core.plugin.TestNGFormatter">
+        <test duration-ms="21102" name="io.cucumber.core.plugin.TestNGFormatter">
+            <class name="AutomationPractice page tests">
+                <test-method duration-ms="20975" finished-at="2022-12-09T22:31:32.335675Z" name="Get titles of the opened tabs" started-at="2022-12-09T22:31:11.317408Z" status="PASS"/>
+            </class>
+        </test>
+    </suite>
+</testng-results>

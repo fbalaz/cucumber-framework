@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: testRunners.CucumberTestNGRunner
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 14.766 s <<< FAILURE! - in testRunners.CucumberTestNGRunner
+testRunners.CucumberTestNGRunner.runScenario["Get titles of the opened tabs", "AutomationPractice page tests"](1)  Time elapsed: 14.174 s  <<< FAILURE!
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1413)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+	at org.testng.Assert.assertEquals(Assert.java:131)
+	at org.testng.Assert.assertEquals(Assert.java:1020)
+	at steps.AutomationPracticeStepDefinition.i_see_tabs_should_have_title_something_and_something_and_something(AutomationPracticeStepDefinition.java:72)
+	at ✽.I see tabs should have title "Practice pages" And "appium mobile automation testing from scratch + frameworks tutorial | udemy" And "the world's most popular api testing tool | soapui"(file:///Users/filip/IntelliJ%20projects/RahulUdemy/src/test/java/features/AutomationPracticePageTests.feature:28)
+
