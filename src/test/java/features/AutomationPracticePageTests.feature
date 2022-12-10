@@ -18,7 +18,7 @@ Feature: AutomationPractice page tests
     When I scroll to the end of page
     Then I open "Soapui" prelink in new tab
     Then I close browser
-@Test
+
   Scenario: Get titles of the opened tabs
     Given I open "Automation practice" page
     When I scroll to the end of page
