@@ -27,7 +27,7 @@ Feature: Flights page tests
     When I click on "Departure" dropdown
     Then I see "Departure options list" should be "visible"
     And I click on "Bengaluru" in "Departure options list" list
-    #Then I see "Arrival options list" should be "visible"
+    Then I see "Arrival options list" should be "visible"
     And I click on "Delhi" in "Arrival options list" list
    # Then I see "Arrival options list" should be "invisible"
    # Then I see "Delhi" in "Arrival" dropdown

@@ -8,6 +8,7 @@ public class PageObjectManager {
     private AmazonPage amazonPage = new AmazonPage();
     private LoginPagePracticePage loginPagePracticePage = new LoginPagePracticePage();
     private JqueryPage jqueryPage = new JqueryPage();
+    private Path2UsaPage path2UsaPage = new Path2UsaPage();
 
     public FlightsPage getFlightsPage() {
         return flightsPage;
@@ -31,5 +32,9 @@ public class PageObjectManager {
 
     public JqueryPage getJqueryPage() {
         return jqueryPage;
+    }
+
+    public Path2UsaPage getPath2UsaPage() {
+        return path2UsaPage;
     }
 }

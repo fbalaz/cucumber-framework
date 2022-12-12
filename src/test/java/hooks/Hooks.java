@@ -1,12 +1,9 @@
 package hooks;
 
-import com.codeborne.selenide.Browser;
-import com.codeborne.selenide.Browsers;
 import com.codeborne.selenide.Configuration;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.chrome.ChromeOptions;
 import utilities.GenericUtils;
 import utilities.TestContextSetup;

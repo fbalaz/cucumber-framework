@@ -40,6 +40,8 @@ public class SharedStepsDefinition {
             open("/loginpagePractise/#/");
         } else if (page.equalsIgnoreCase("Jquery")) {
             open("https://jqueryui.com/droppable/");
+        } else if (page.equalsIgnoreCase("Path2Usa")) {
+            open("https://www.path2usa.com/travel-companion/");
         }
     }
 
