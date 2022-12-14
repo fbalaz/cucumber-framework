@@ -2,8 +2,10 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.page;
+import java.util.List;
+
+import static com.codeborne.selenide.Selenide.*;
+
 
 public class AutomationPracticePage {
 
@@ -18,6 +20,9 @@ public class AutomationPracticePage {
             "> td:first-child>ul > li:nth-child(3) a");
     private SelenideElement appiumPrelink = $("table > tbody > tr > td:first-child > " +
             "ul > li:nth-child(4) a");
+    private SelenideElement webTable = $("div.tableFixHead");
+    private SelenideElement totalAmount = $(".totalAmount");
+    private List<SelenideElement> amountColumnCells = $$(".tableFixHead > table > tbody > tr > td:nth-child(4)");
 
     public SelenideElement getAlertNameInputField() {
         return alertNameInputField;
@@ -37,5 +42,17 @@ public class AutomationPracticePage {
 
     public SelenideElement getAppiumPrelinkFooter() {
         return appiumPrelink;
+    }
+
+    public SelenideElement getWebTable() {
+        return webTable;
+    }
+
+    public SelenideElement getTotalAmount() {
+        return totalAmount;
+    }
+
+    public List<SelenideElement> getAmountColumnCells() {
+        return amountColumnCells;
     }
 }

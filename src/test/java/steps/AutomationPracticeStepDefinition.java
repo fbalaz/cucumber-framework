@@ -1,5 +1,7 @@
 package steps;
 
+
+import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -8,11 +10,13 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import pages.AutomationPracticePage;
 import utilities.TestContextSetup;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Condition.*;
 
 import java.util.ArrayList;
 import java.util.Set;
 
-import static com.codeborne.selenide.Selenide.switchTo;
+
 
 public class AutomationPracticeStepDefinition {
 
@@ -83,6 +87,39 @@ public class AutomationPracticeStepDefinition {
             tabTitles.add(WebDriverRunner.getWebDriver().getTitle().toLowerCase());
         }
         System.out.println(tabTitles);
+    }
+
+    @When("^I scroll onto \"([^\"]*)\" element$")
+    public void i_scroll_onto_something_element(String elementId) {
+        if(elementId.equalsIgnoreCase("Webtable")) {
+            automationPracticePage.getWebTable().scrollIntoView(true);
+        }
+    }
+
+    @Then("^I see total amount count is equal to value in \"([^\"]*)\" element$")
+    public void i_see_total_amount_count_is_equal_to_value_in_something_element(String elementId)  {
+        int totalValueFromTable = 0;
+        int parsedExtractedAmount = 0;
+        if(elementId.equalsIgnoreCase("Total Amount Collected")) {
+            String[] totalElementCountWholeText = automationPracticePage.getTotalAmount().getText()
+                    .replaceAll(" ","").split(":");
+            String extractedAmount = totalElementCountWholeText[1];
+            parsedExtractedAmount = Integer.parseInt(extractedAmount);
+        }
+        for (SelenideElement s : automationPracticePage.getAmountColumnCells()) {
+            String amountFromCell = s.getText();
+            int parsedAmountFromCell = Integer.parseInt(amountFromCell);
+            totalValueFromTable += parsedAmountFromCell;
+        }
+        Assert.assertEquals(totalValueFromTable, parsedExtractedAmount);
+
+    }
+
+    @And("^I scroll inside \"([^\"]*)\" element$")
+    public void i_scroll_inside_something_element(String elementId)  {
+       if (elementId.equalsIgnoreCase("Webtable")) {
+           executeJavaScript("document.querySelector('div.tableFixHead').scrollTop=5000");
+       }
     }
 
 }

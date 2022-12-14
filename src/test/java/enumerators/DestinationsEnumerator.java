@@ -25,9 +25,9 @@ public enum DestinationsEnumerator {
                 System.out.println("(//a[@value='" + value.getXpath() + "'])[2]");
             }
         }
-        String a = "aaaa - bbbb";
-        String[] b = a.trim().split("-");
-        String aaaa = b[0];
+        String a = " Total Amount Collected: 296 ";
+        String[] b = a.replaceAll(" ","").split(":");
+        String aaaa = b[1];
         System.out.println(aaaa);
     }
 
