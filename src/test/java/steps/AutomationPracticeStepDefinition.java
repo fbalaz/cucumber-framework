@@ -3,6 +3,7 @@ package steps;
 
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,6 +14,11 @@ import utilities.TestContextSetup;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -23,6 +29,8 @@ public class AutomationPracticeStepDefinition {
     private TestContextSetup testContextSetup;
     private AutomationPracticePage automationPracticePage;
     private ArrayList<String> tabTitles;
+    private String extractedUrl;
+    private HttpURLConnection connection;
 
     public AutomationPracticeStepDefinition(TestContextSetup testContextSetup) {
         this.testContextSetup = testContextSetup;
@@ -63,6 +71,8 @@ public class AutomationPracticeStepDefinition {
         switch (prelinkId) {
             case "Soapui" -> automationPracticePage.getSoapuiPrelinkFooter().sendKeys(Keys.COMMAND, Keys.ENTER);
             case "Appium" -> automationPracticePage.getAppiumPrelinkFooter().sendKeys(Keys.COMMAND, Keys.ENTER);
+            case "Broken Link" -> automationPracticePage.getBrokenLinkPrelink().sendKeys(Keys.COMMAND, Keys.ENTER);
+
         }
     }
 
@@ -121,5 +131,27 @@ public class AutomationPracticeStepDefinition {
            executeJavaScript("document.querySelector('div.tableFixHead').scrollTop=5000");
        }
     }
+
+    @Then("^I extract url from \"([^\"]*)\" prelink element$")
+    public void i_extract_url_from_something_prelink_element(String elementId)  {
+        if(elementId.equalsIgnoreCase("Broken Link")) {
+            this.extractedUrl = automationPracticePage.getBrokenLinkPrelink().getAttribute("href");
+        }
+    }
+
+    @Then("^I check HTTP code should be \"(\\d+)\"$")
+    public void i_check_http_code_should_be_something(int expectedErrorCode) throws IOException {
+        int actualErrorCode = connection.getResponseCode();
+        System.out.println(actualErrorCode);
+        Assert.assertEquals(actualErrorCode,expectedErrorCode);
+    }
+
+    @And("^I navigate to extracted url$")
+    public void i_navigate_to_extracted_url() throws IOException {
+        this.connection = (HttpURLConnection) new URL(this.extractedUrl).openConnection();
+        this.connection.setRequestMethod("GET");
+        this.connection.connect();
+    }
+
 
 }

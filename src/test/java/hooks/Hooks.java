@@ -29,7 +29,9 @@ public class Hooks {
     public void setUp() {
         genericUtils.chooseBrowser();
         Configuration.baseUrl = prop.getProperty("base_url");
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--incognito");
+        ChromeOptions opt = new ChromeOptions();
+        Configuration.browserCapabilities = opt.addArguments("--incognito");
+
     }
 
     @AfterStep

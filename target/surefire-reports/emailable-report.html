@@ -9,10 +9,34 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">All Test Suite</th></tr>
-<tr><td><a href="#t0">rahul selenium to selenide cucumber </a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">21 512</td><td></td><td></td></tr>
+<tr><td><a href="#t0">rahul selenium to selenide cucumber </a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">590</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">All Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">rahul selenium to selenide cucumber  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">testRunners.CucumberTestNGRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1670625071279</td><td rowspan="1">21058</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">All Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">rahul selenium to selenide cucumber  &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testRunners.CucumberTestNGRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1670882284026</td><td rowspan="1">149</td></tr></tbody>
 </table>
-<h2>rahul selenium to selenide cucumber </h2><h3 id="m0">testRunners.CucumberTestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Get titles of the opened tabs&quot;</td><td>&quot;AutomationPractice page tests&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>rahul selenium to selenide cucumber </h2><h3 id="m0">testRunners.CucumberTestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Select date from datepicker&quot;</td><td>&quot;Path2Usa Tests&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.IllegalArgumentException: Conflicting browser name: &apos;safari&apos; vs. &apos;chrome&apos;
+	at com.codeborne.selenide.webdriver.AbstractDriverFactory.verifyItsSameBrowser(AbstractDriverFactory.java:94)
+	at com.codeborne.selenide.webdriver.AbstractDriverFactory.merge(AbstractDriverFactory.java:88)
+	at com.codeborne.selenide.webdriver.AbstractDriverFactory.createCommonCapabilities(AbstractDriverFactory.java:81)
+	at com.codeborne.selenide.webdriver.SafariDriverFactory.createCapabilities(SafariDriverFactory.java:50)
+	at com.codeborne.selenide.webdriver.SafariDriverFactory.create(SafariDriverFactory.java:30)
+	at com.codeborne.selenide.webdriver.WebDriverFactory.createWebDriverInstance(WebDriverFactory.java:119)
+	at com.codeborne.selenide.webdriver.WebDriverFactory.createWebDriver(WebDriverFactory.java:67)
+	at com.codeborne.selenide.drivercommands.CreateDriverCommand.lambda$createDriver$0(CreateDriverCommand.java:76)
+	at com.codeborne.selenide.logevents.SelenideLogger.get(SelenideLogger.java:166)
+	at com.codeborne.selenide.drivercommands.CreateDriverCommand.createDriver(CreateDriverCommand.java:52)
+	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer.createDriver(WebDriverThreadLocalContainer.java:180)
+	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer.getAndCheckWebDriver(WebDriverThreadLocalContainer.java:149)
+	at com.codeborne.selenide.WebDriverRunner.getAndCheckWebDriver(WebDriverRunner.java:130)
+	at com.codeborne.selenide.impl.StaticDriver.getAndCheckWebDriver(StaticDriver.java:65)
+	at com.codeborne.selenide.SelenideDriver.getAndCheckWebDriver(SelenideDriver.java:220)
+	at com.codeborne.selenide.drivercommands.Navigator.lambda$navigateTo$0(Navigator.java:72)
+	at com.codeborne.selenide.logevents.SelenideLogger.run(SelenideLogger.java:153)
+	at com.codeborne.selenide.drivercommands.Navigator.navigateTo(Navigator.java:70)
+	at com.codeborne.selenide.drivercommands.Navigator.open(Navigator.java:32)
+	at com.codeborne.selenide.SelenideDriver.open(SelenideDriver.java:101)
+	at com.codeborne.selenide.Selenide.open(Selenide.java:52)
+	at steps.SharedStepsDefinition.i_open_something_page(SharedStepsDefinition.java:44)
+	at ✽.I open &quot;Path2Usa&quot; page(file:///Users/filip/IntelliJ%20projects/RahulUdemy/src/test/java/features/Path2UsaTests.feature:4)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

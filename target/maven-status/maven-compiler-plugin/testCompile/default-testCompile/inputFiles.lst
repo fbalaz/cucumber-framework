@@ -1,6 +1,7 @@
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/steps/SharedStepsDefinition.java
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/pages/AutomationPracticePage.java
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/pages/EcommercePage.java
+/Users/filip/IntelliJ projects/RahulUdemy/src/test/java/pages/Path2UsaPage.java
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/pages/FlightsPage.java
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/pages/LoginPagePracticePage.java
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/utilities/GenericUtils.java
@@ -13,6 +14,7 @@
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/steps/AmazonStepsDefinition.java
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/testRunners/CucumberTestNGRunner.java
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/steps/AutomationPracticeStepDefinition.java
+/Users/filip/IntelliJ projects/RahulUdemy/src/test/java/steps/Path2UsaStepsDefinition.java
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/utilities/TestContextSetup.java
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/steps/EcommerceStepsDefinition.java
 /Users/filip/IntelliJ projects/RahulUdemy/src/test/java/hooks/Hooks.java

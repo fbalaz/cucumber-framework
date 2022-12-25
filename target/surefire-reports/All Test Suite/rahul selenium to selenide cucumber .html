@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>rahul selenium to selenide cucumber </h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Dec 09 23:31:11 CET 2022</td>
+<td>Started on:</td><td>Mon Dec 12 22:58:03 CET 2022</td>
 </tr>
-<tr><td>Total time:</td><td>21 seconds (21512 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (590 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,8 +67,8 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td><b>Attribute(s)</b></td>
 <td width="30%"><b>Exception</b></td>
@@ -76,10 +76,59 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testRunners.CucumberTestNGRunner.runScenario()'><b>runScenario</b><br>Test class: testRunners.CucumberTestNGRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Get titles of the opened tabs", "AutomationPractice page tests"</td>
-<td></td>
-<td>21</td>
-<td>testRunners.CucumberTestNGRunner@5d94a2dc</td></tr>
+<td title='testRunners.CucumberTestNGRunner.runScenario()'><b>runScenario</b><br>Test class: testRunners.CucumberTestNGRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Select date from datepicker", "Path2Usa Tests"</td>
+<td><div><pre>java.lang.IllegalArgumentException: Conflicting browser name: &apos;safari&apos; vs. &apos;chrome&apos;
+	at com.codeborne.selenide.webdriver.AbstractDriverFactory.verifyItsSameBrowser(AbstractDriverFactory.java:94)
+	at com.codeborne.selenide.webdriver.AbstractDriverFactory.merge(AbstractDriverFactory.java:88)
+	at com.codeborne.selenide.webdriver.AbstractDriverFactory.createCommonCapabilities(AbstractDriverFactory.java:81)
+	at com.codeborne.selenide.webdriver.SafariDriverFactory.createCapabilities(SafariDriverFactory.java:50)
+	at com.codeborne.selenide.webdriver.SafariDriverFactory.create(SafariDriverFactory.java:30)
+	at com.codeborne.selenide.webdriver.WebDriverFactory.createWebDriverInstance(WebDriverFactory.java:119)
+	at com.codeborne.selenide.webdriver.WebDriverFactory.createWebDriver(WebDriverFactory.java:67)
+	at com.codeborne.selenide.drivercommands.CreateDriverCommand.lambda$createDriver$0(CreateDriverCommand.java:76)
+	at com.codeborne.selenide.logevents.SelenideLogger.get(SelenideLogger.java:166)
+	at com.codeborne.selenide.drivercommands.CreateDriverCommand.createDriver(CreateDriverCommand.java:52)
+	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer.createDriver(WebDriverThreadLocalContainer.java:180)
+	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer.getAndCheckWebDriver(WebDriverThreadLocalContainer.java:149)
+	at com.codeborne.selenide.WebDriverRunner.getAndCheckWebDriver(WebDriverRunner.java:130)
+	at com.codeborne.selenide.impl.StaticDriver.getAndCheckWebDriver(StaticDriver.java:65)
+	at com.codeborne.selenide.SelenideDriver.getAndCheckWebDriver(SelenideDriver.java:220)
+	at com.codeborne.selenide.drivercommands.Navigator.lambda$navigateTo$0(Navigator.java:72)
+	at com.codeborne.selenide.logevents.SelenideLogger.run(SelenideLogger.java:153)
+	at com.codeborne.selenide.drivercommands.Navigator.navigateTo(Navigator.java:70)
+	at com.codeborne.selenide.drivercommands.Navigator.open(Navigator.java:32)
+	at com.codeborne.selenide.SelenideDriver.open(SelenideDriver.java:101)
+	at com.codeborne.selenide.Selenide.open(Selenide.java:52)
+	at steps.SharedStepsDefinition.i_open_something_page(SharedStepsDefinition.java:44)
+	at ✽.I open &quot;Path2Usa&quot; page(file:///Users/filip/IntelliJ%20projects/RahulUdemy/src/test/java/features/Path2UsaTests.feature:4)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1993366729", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1993366729'><pre>java.lang.IllegalArgumentException: Conflicting browser name: &apos;safari&apos; vs. &apos;chrome&apos;
+	at com.codeborne.selenide.webdriver.AbstractDriverFactory.verifyItsSameBrowser(AbstractDriverFactory.java:94)
+	at com.codeborne.selenide.webdriver.AbstractDriverFactory.merge(AbstractDriverFactory.java:88)
+	at com.codeborne.selenide.webdriver.AbstractDriverFactory.createCommonCapabilities(AbstractDriverFactory.java:81)
+	at com.codeborne.selenide.webdriver.SafariDriverFactory.createCapabilities(SafariDriverFactory.java:50)
+	at com.codeborne.selenide.webdriver.SafariDriverFactory.create(SafariDriverFactory.java:30)
+	at com.codeborne.selenide.webdriver.WebDriverFactory.createWebDriverInstance(WebDriverFactory.java:119)
+	at com.codeborne.selenide.webdriver.WebDriverFactory.createWebDriver(WebDriverFactory.java:67)
+	at com.codeborne.selenide.drivercommands.CreateDriverCommand.lambda$createDriver$0(CreateDriverCommand.java:76)
+	at com.codeborne.selenide.logevents.SelenideLogger.get(SelenideLogger.java:166)
+	at com.codeborne.selenide.drivercommands.CreateDriverCommand.createDriver(CreateDriverCommand.java:52)
+	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer.createDriver(WebDriverThreadLocalContainer.java:180)
+	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer.getAndCheckWebDriver(WebDriverThreadLocalContainer.java:149)
+	at com.codeborne.selenide.WebDriverRunner.getAndCheckWebDriver(WebDriverRunner.java:130)
+	at com.codeborne.selenide.impl.StaticDriver.getAndCheckWebDriver(StaticDriver.java:65)
+	at com.codeborne.selenide.SelenideDriver.getAndCheckWebDriver(SelenideDriver.java:220)
+	at com.codeborne.selenide.drivercommands.Navigator.lambda$navigateTo$0(Navigator.java:72)
+	at com.codeborne.selenide.logevents.SelenideLogger.run(SelenideLogger.java:153)
+	at com.codeborne.selenide.drivercommands.Navigator.navigateTo(Navigator.java:70)
+	at com.codeborne.selenide.drivercommands.Navigator.open(Navigator.java:32)
+	at com.codeborne.selenide.SelenideDriver.open(SelenideDriver.java:101)
+	at com.codeborne.selenide.Selenide.open(Selenide.java:52)
+	at steps.SharedStepsDefinition.i_open_something_page(SharedStepsDefinition.java:44)
+	at ✽.I open &quot;Path2Usa&quot; page(file:///Users/filip/IntelliJ%20projects/RahulUdemy/src/test/java/features/Path2UsaTests.feature:4)
+</pre></div></td>
+<td>0</td>
+<td>testRunners.CucumberTestNGRunner@64cd705f</td></tr>
 </table><p>
 </body>
 </html>

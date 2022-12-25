@@ -1,43 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-12-09T23:31:11 SEČ" name="All Test Suite" finished-at="2022-12-09T23:31:32 SEČ" duration-ms="21512">
+  <suite started-at="2022-12-12T22:58:03 SEČ" name="All Test Suite" finished-at="2022-12-12T22:58:04 SEČ" duration-ms="590">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.CucumberTestNGRunner@5d94a2dc]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.CucumberTestNGRunner@64cd705f]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2022-12-09T23:31:11 SEČ" name="rahul selenium to selenide cucumber " finished-at="2022-12-09T23:31:32 SEČ" duration-ms="21512">
+    <test started-at="2022-12-12T22:58:03 SEČ" name="rahul selenium to selenide cucumber " finished-at="2022-12-12T22:58:04 SEČ" duration-ms="590">
       <class name="testRunners.CucumberTestNGRunner">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunners.CucumberTestNGRunner@5d94a2dc]" started-at="2022-12-09T23:31:11 SEČ" name="setUpClass" finished-at="2022-12-09T23:31:11 SEČ" duration-ms="269" status="PASS">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:testRunners.CucumberTestNGRunner@64cd705f]" started-at="2022-12-12T22:58:03 SEČ" name="setUpClass" finished-at="2022-12-12T22:58:04 SEČ" duration-ms="255" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@1802f60c]]>
+                <![CDATA[org.testng.TestRunner@5e5af8e1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.CucumberTestNGRunner@5d94a2dc]" started-at="2022-12-09T23:31:11 SEČ" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-12-09T23:31:32 SEČ" duration-ms="21058" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:testRunners.CucumberTestNGRunner@64cd705f]" started-at="2022-12-12T22:58:04 SEČ" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2022-12-12T22:58:04 SEČ" duration-ms="149" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Get titles of the opened tabs"]]>
+                <![CDATA["Select date from datepicker"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["AutomationPractice page tests"]]>
+                <![CDATA["Path2Usa Tests"]]>
               </value>
             </param>
           </params>
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[Conflicting browser name: 'safari' vs. 'chrome']]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: Conflicting browser name: 'safari' vs. 'chrome'
+at com.codeborne.selenide.webdriver.AbstractDriverFactory.verifyItsSameBrowser(AbstractDriverFactory.java:94)
+at com.codeborne.selenide.webdriver.AbstractDriverFactory.merge(AbstractDriverFactory.java:88)
+at com.codeborne.selenide.webdriver.AbstractDriverFactory.createCommonCapabilities(AbstractDriverFactory.java:81)
+at com.codeborne.selenide.webdriver.SafariDriverFactory.createCapabilities(SafariDriverFactory.java:50)
+at com.codeborne.selenide.webdriver.SafariDriverFactory.create(SafariDriverFactory.java:30)
+at com.codeborne.selenide.webdriver.WebDriverFactory.createWebDriverInstance(WebDriverFactory.java:119)
+at com.codeborne.selenide.webdriver.WebDriverFactory.createWebDriver(WebDriverFactory.java:67)
+at com.codeborne.selenide.drivercommands.CreateDriverCommand.lambda$createDriver$0(CreateDriverCommand.java:76)
+at com.codeborne.selenide.logevents.SelenideLogger.get(SelenideLogger.java:166)
+at com.codeborne.selenide.drivercommands.CreateDriverCommand.createDriver(CreateDriverCommand.java:52)
+at com.codeborne.selenide.impl.WebDriverThreadLocalContainer.createDriver(WebDriverThreadLocalContainer.java:180)
+at com.codeborne.selenide.impl.WebDriverThreadLocalContainer.getAndCheckWebDriver(WebDriverThreadLocalContainer.java:149)
+at com.codeborne.selenide.WebDriverRunner.getAndCheckWebDriver(WebDriverRunner.java:130)
+at com.codeborne.selenide.impl.StaticDriver.getAndCheckWebDriver(StaticDriver.java:65)
+at com.codeborne.selenide.SelenideDriver.getAndCheckWebDriver(SelenideDriver.java:220)
+at com.codeborne.selenide.drivercommands.Navigator.lambda$navigateTo$0(Navigator.java:72)
+at com.codeborne.selenide.logevents.SelenideLogger.run(SelenideLogger.java:153)
+at com.codeborne.selenide.drivercommands.Navigator.navigateTo(Navigator.java:70)
+at com.codeborne.selenide.drivercommands.Navigator.open(Navigator.java:32)
+at com.codeborne.selenide.SelenideDriver.open(SelenideDriver.java:101)
+at com.codeborne.selenide.Selenide.open(Selenide.java:52)
+at steps.SharedStepsDefinition.i_open_something_page(SharedStepsDefinition.java:44)
+at ✽.I open "Path2Usa" page(file:///Users/filip/IntelliJ%20projects/RahulUdemy/src/test/java/features/Path2UsaTests.feature:4)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunners.CucumberTestNGRunner@5d94a2dc]" started-at="2022-12-09T23:31:32 SEČ" name="tearDownClass" finished-at="2022-12-09T23:31:32 SEČ" duration-ms="170" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:testRunners.CucumberTestNGRunner@64cd705f]" started-at="2022-12-12T22:58:04 SEČ" name="tearDownClass" finished-at="2022-12-12T22:58:04 SEČ" duration-ms="171" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -1,4 +1,5 @@
 package steps;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.WebDriverRunner;
 import enumerators.DestinationsEnumerator;
@@ -41,6 +42,7 @@ public class FlightsStepsDefinition {
     public void i_type_something_into_something_dropdown(String countryShortName, String dropdownId) throws Throwable {
         if(dropdownId.equals("Autosuggest")) {
             flightsPage.getAutoSuggestCountryDropdown().sendKeys(countryShortName);
+
         }
     }
 

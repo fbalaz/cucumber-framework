@@ -27,9 +27,10 @@ Feature: AutomationPractice page tests
     And I get title of every opened tab
     Then I see tabs should have title "Practice page" And "appium mobile automation testing from scratch + frameworks tutorial | udemy" And "the world's most popular api testing tool | soapui"
 
-  @Test
-  Scenario: Scroll to tsble and count total amount of values
+  Scenario: Check http code of broken link
     Given I open "Automation practice" page
-    When I scroll onto "Webtable" element
-    And I scroll inside "Webtable" element
-    Then I see total amount count is equal to value in "Total Amount Collected" element
+    When I scroll to the end of page
+    Then I extract url from "Broken Link" prelink element
+    And I navigate to extracted url
+    Then I check HTTP code should be "404"
+

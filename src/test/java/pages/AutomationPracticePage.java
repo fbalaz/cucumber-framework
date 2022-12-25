@@ -20,6 +20,8 @@ public class AutomationPracticePage {
             "> td:first-child>ul > li:nth-child(3) a");
     private SelenideElement appiumPrelink = $("table > tbody > tr > td:first-child > " +
             "ul > li:nth-child(4) a");
+    private SelenideElement brokenLinkPrelink = $("table > tbody > tr > td:nth-child(2) > ul >" +
+            " li:nth-child(2) > a");
     private SelenideElement webTable = $("div.tableFixHead");
     private SelenideElement totalAmount = $(".totalAmount");
     private List<SelenideElement> amountColumnCells = $$(".tableFixHead > table > tbody > tr > td:nth-child(4)");
@@ -54,5 +56,9 @@ public class AutomationPracticePage {
 
     public List<SelenideElement> getAmountColumnCells() {
         return amountColumnCells;
+    }
+
+    public SelenideElement getBrokenLinkPrelink() {
+        return brokenLinkPrelink;
     }
 }
