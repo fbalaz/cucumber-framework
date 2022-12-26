@@ -27,10 +27,16 @@ Feature: AutomationPractice page tests
     And I get title of every opened tab
     Then I see tabs should have title "Practice page" And "appium mobile automation testing from scratch + frameworks tutorial | udemy" And "the world's most popular api testing tool | soapui"
 
-  Scenario: Check http code of broken link
+  Scenario: Check response code of broken link
     Given I open "Automation practice" page
     When I scroll to the end of page
     Then I extract url from "Broken Link" prelink element
     And I navigate to extracted url
     Then I check HTTP code should be "404"
 
+  Scenario: Check response codes of all prelinks in footer
+    Given I open "Automation practice" page
+    When I scroll to the end of page
+    Then I extract urls from "All" prelink elements
+    And I navigate to extracted urls
+    Then I check HTTP codes should be "200"

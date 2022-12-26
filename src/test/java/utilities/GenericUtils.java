@@ -2,12 +2,16 @@ package utilities;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.OutputType;
 import static com.codeborne.selenide.Selenide.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.time.Duration;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.*;
 
 import static com.codeborne.selenide.Selenide.screenshot;
@@ -15,6 +19,7 @@ import static com.codeborne.selenide.Selenide.screenshot;
 public class GenericUtils {
     private Properties prop;
     private FileInputStream fis;
+    private HttpURLConnection connection;
 
     public GenericUtils() throws IOException {
         loadProperties();
@@ -67,6 +72,18 @@ public class GenericUtils {
                 break;
             }
         }
+    }
+    public String generateRandomString(int numberOfCharacters,boolean lettersWanted, boolean numbersWanted) {
+        return RandomStringUtils.random(numberOfCharacters, lettersWanted, numbersWanted);
+    }
+    public void sendHttpRequest(String url) throws IOException {
+        this.connection = (HttpURLConnection) new URL(url).openConnection();
+        this.connection.setRequestMethod("GET");
+        this.connection.connect();
+    }
+
+    public HttpURLConnection getConnection() {
+        return connection;
     }
 }
 

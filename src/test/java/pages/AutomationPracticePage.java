@@ -1,10 +1,12 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import org.openqa.selenium.By;
 
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selectors.*;
 
 
 public class AutomationPracticePage {
@@ -25,7 +27,7 @@ public class AutomationPracticePage {
     private SelenideElement webTable = $("div.tableFixHead");
     private SelenideElement totalAmount = $(".totalAmount");
     private List<SelenideElement> amountColumnCells = $$(".tableFixHead > table > tbody > tr > td:nth-child(4)");
-
+    private List<SelenideElement> allFooterPrelinks = $(".gf-t").findAll(byTagName("a"));
     public SelenideElement getAlertNameInputField() {
         return alertNameInputField;
     }
@@ -60,5 +62,9 @@ public class AutomationPracticePage {
 
     public SelenideElement getBrokenLinkPrelink() {
         return brokenLinkPrelink;
+    }
+
+    public List<SelenideElement> getAllFooterPrelinks() {
+        return allFooterPrelinks;
     }
 }

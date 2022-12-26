@@ -9,17 +9,20 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
 import pages.AutomationPracticePage;
+import utilities.GenericUtils;
 import utilities.TestContextSetup;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 
 import java.io.IOException;
+
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Set;
 
 
@@ -29,13 +32,18 @@ public class AutomationPracticeStepDefinition {
     private TestContextSetup testContextSetup;
     private AutomationPracticePage automationPracticePage;
     private ArrayList<String> tabTitles;
-    private String extractedUrl;
     private HttpURLConnection connection;
+    private ArrayList<String> extractedUrls = new ArrayList<>();
+    private ArrayList<String> linkNames = new ArrayList<>();
+    private HashMap<String,Integer> linkAndResponseCode = new HashMap<>();
+    private GenericUtils genericUtils;
+    private String elementId;
 
     public AutomationPracticeStepDefinition(TestContextSetup testContextSetup) {
         this.testContextSetup = testContextSetup;
         this.automationPracticePage = testContextSetup.pageObjectManager.getAutomationPracticePage();
         this.tabTitles = testContextSetup.tabTitles;
+        this.genericUtils = testContextSetup.genericUtils;
     }
 
     @When("^I type \"([^\"]*)\" into \"([^\"]*)\" field$")
@@ -132,26 +140,52 @@ public class AutomationPracticeStepDefinition {
        }
     }
 
-    @Then("^I extract url from \"([^\"]*)\" prelink element$")
+    @Then("^I extract urls? from \"([^\"]*)\" prelink elements?$")
     public void i_extract_url_from_something_prelink_element(String elementId)  {
+        this.elementId = elementId;
         if(elementId.equalsIgnoreCase("Broken Link")) {
-            this.extractedUrl = automationPracticePage.getBrokenLinkPrelink().getAttribute("href");
+            this.extractedUrls.add(automationPracticePage.getBrokenLinkPrelink().getAttribute("href"));
+        } else if (elementId.equalsIgnoreCase("All")) {
+            for (SelenideElement s : automationPracticePage.getAllFooterPrelinks()) {
+                this.extractedUrls.add(s.getAttribute("href"));
+            }
         }
     }
 
-    @Then("^I check HTTP code should be \"(\\d+)\"$")
-    public void i_check_http_code_should_be_something(int expectedErrorCode) throws IOException {
-        int actualErrorCode = connection.getResponseCode();
-        System.out.println(actualErrorCode);
-        Assert.assertEquals(actualErrorCode,expectedErrorCode);
+    @Then("^I check HTTP codes? should be \"(\\d+)\"$")
+    public void i_check_http_code_should_be_something(int expectedResponseCode) throws IOException {
+        SoftAssert softAssert = new SoftAssert();
+        if(this.elementId.equalsIgnoreCase("Broken Link")) {
+            Assert.assertEquals(this.linkAndResponseCode.get(this.linkNames.get(0)),expectedResponseCode);
+        } else if (this.elementId.equalsIgnoreCase("All")) {
+            for (int i = 0; i < this.linkAndResponseCode.size(); i++) {
+                softAssert.assertTrue(this.linkAndResponseCode.get(this.linkNames.get(i)).equals(expectedResponseCode),
+                        "Link " + this.linkNames.get(i) + " has response code " +
+                                this.linkAndResponseCode.get(this.linkNames.get(i)));
+            }
+            softAssert.assertAll();
+        }
     }
 
-    @And("^I navigate to extracted url$")
+    @And("^I navigate to extracted urls?$")
     public void i_navigate_to_extracted_url() throws IOException {
-        this.connection = (HttpURLConnection) new URL(this.extractedUrl).openConnection();
-        this.connection.setRequestMethod("GET");
-        this.connection.connect();
-    }
+        if (this.elementId.equalsIgnoreCase("Broken link")) {
+            genericUtils.sendHttpRequest(this.extractedUrls.get(0));
+            String linkName = automationPracticePage.getBrokenLinkPrelink().getText();
+            int responseCode = this.genericUtils.getConnection().getResponseCode();
+            this.linkAndResponseCode.put(linkName, responseCode);
+            this.linkNames.add(linkName);
 
+        } else if (this.elementId.equalsIgnoreCase("All")) {
+            for (int i = 0; i < this.extractedUrls.size(); i++) {
+                genericUtils.sendHttpRequest(this.extractedUrls.get(i));
+                String linkName = automationPracticePage.getAllFooterPrelinks().get(i).getText()
+                        + this.genericUtils.generateRandomString(3, true, false);
+                int responseCode = this.genericUtils.getConnection().getResponseCode();
+                this.linkAndResponseCode.put(linkName, responseCode);
+                this.linkNames.add(linkName);
+            }
+        }
+    }
 
 }
