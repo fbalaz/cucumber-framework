@@ -83,7 +83,11 @@ public class GenericUtils {
     }
 
     public HttpURLConnection getConnection() {
-        return connection;
+        return this.connection;
+    }
+
+    public void scrollBy(int x, int y) {
+        executeJavaScript("window.scrollBy[" + x + "," + y + "]");
     }
 }
 
