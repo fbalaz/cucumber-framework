@@ -11,7 +11,7 @@ import org.testng.annotations.DataProvider;
         plugin={"pretty","html:target/cucumber-reports/report.html","json:target/cucumber-reports/report.json",
                 "testng:target/cucumber-reports/report.xml",
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
-        tags = "@Test"
+        tags = "@Smoke"
 
 
 
