@@ -12,7 +12,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 import static com.codeborne.selenide.Selenide.screenshot;
 
@@ -27,8 +29,8 @@ public class GenericUtils {
 
     public void loadProperties() throws IOException {
         prop = new Properties();
-        if(System.getProperty("env").equals("test")) {
-            fis = new FileInputStream("src/test/resources/testenv.properties");
+        if(System.getProperty("env").equals("int")) {
+            fis = new FileInputStream("src/test/resources/int.properties");
             prop.load(fis);
         }
     }
@@ -60,7 +62,7 @@ public class GenericUtils {
 
     public void customWait(long seconds) throws InterruptedException {
 
-      Thread.sleep(seconds*1000);
+      WebDriverRunner.getWebDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
     }
 
     public void switchWindow() {
