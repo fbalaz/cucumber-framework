@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testng-results failed="0" passed="1" skipped="0" total="1">
-    <suite duration-ms="6910" name="io.cucumber.core.plugin.TestNGFormatter">
-        <test duration-ms="6910" name="io.cucumber.core.plugin.TestNGFormatter">
-            <class name="AutomationPractice page tests">
-                <test-method duration-ms="6792" finished-at="2022-12-25T19:53:13.745591Z" name="Check http code of broken link" started-at="2022-12-25T19:53:06.913449Z" status="PASS"/>
+<testng-results failed="0" passed="2" skipped="0" total="2">
+    <suite duration-ms="5874" name="io.cucumber.core.plugin.TestNGFormatter">
+        <test duration-ms="5874" name="io.cucumber.core.plugin.TestNGFormatter">
+            <class name="Krone demo">
+                <test-method duration-ms="5750" finished-at="2023-04-08T08:33:33.195685Z" name="Validate Linkedin URL" started-at="2023-04-08T08:33:27.408572Z" status="PASS"/>
+                <test-method duration-ms="4548" finished-at="2023-04-08T08:33:31.994462Z" name="Validate Instagram URL" started-at="2023-04-08T08:33:27.408906Z" status="PASS"/>
             </class>
         </test>
     </suite>

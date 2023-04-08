@@ -9,6 +9,7 @@ public class PageObjectManager {
     private LoginPagePracticePage loginPagePracticePage = new LoginPagePracticePage();
     private JqueryPage jqueryPage = new JqueryPage();
     private Path2UsaPage path2UsaPage = new Path2UsaPage();
+    private KroneHomePage kroneHomePage = new KroneHomePage();
 
     public FlightsPage getFlightsPage() {
         return flightsPage;
@@ -36,5 +37,9 @@ public class PageObjectManager {
 
     public Path2UsaPage getPath2UsaPage() {
         return path2UsaPage;
+    }
+
+    public KroneHomePage getKroneHomePage() {
+        return kroneHomePage;
     }
 }

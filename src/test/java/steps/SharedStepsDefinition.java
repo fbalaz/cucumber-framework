@@ -42,6 +42,8 @@ public class SharedStepsDefinition {
             open("https://jqueryui.com/droppable/");
         } else if (page.equalsIgnoreCase("Path2Usa")) {
             open("https://www.path2usa.com/travel-companion/");
+        } else if (page.equalsIgnoreCase("Krone Homepage")) {
+            open("https://www.kroneit.com/");
         }
     }
 

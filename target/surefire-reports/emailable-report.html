@@ -9,34 +9,95 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">All Test Suite</th></tr>
-<tr><td><a href="#t0">rahul selenium to selenide cucumber </a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">590</td><td></td><td></td></tr>
+<tr><td><a href="#t0">rahul selenium to selenide cucumber </a></td><td class="num">2</td><td class="num">0</td><td class="num">0</td><td class="num attn">4</td><td class="num">138 909</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">All Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">rahul selenium to selenide cucumber  &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">testRunners.CucumberTestNGRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1670882284026</td><td rowspan="1">149</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">All Test Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">rahul selenium to selenide cucumber  &#8212; failed</th></tr><tr class="failedeven"><td rowspan="4">testRunners.CucumberTestNGRunner</td><td><a href="#m0">runScenario</a></td><td rowspan="4">1680866032439</td><td rowspan="4">30151</td></tr><tr class="failedeven"><td><a href="#m1">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m2">runScenario</a></td></tr><tr class="failedeven"><td><a href="#m3">runScenario</a></td></tr><tr><th colspan="4">rahul selenium to selenide cucumber  &#8212; passed</th></tr><tr class="passedeven"><td rowspan="2">testRunners.CucumberTestNGRunner</td><td><a href="#m4">runScenario</a></td><td rowspan="2">1680865964971</td><td rowspan="2">7144</td></tr><tr class="passedeven"><td><a href="#m5">runScenario</a></td></tr></tbody>
 </table>
-<h2>rahul selenium to selenide cucumber </h2><h3 id="m0">testRunners.CucumberTestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Select date from datepicker&quot;</td><td>&quot;Path2Usa Tests&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.IllegalArgumentException: Conflicting browser name: &apos;safari&apos; vs. &apos;chrome&apos;
-	at com.codeborne.selenide.webdriver.AbstractDriverFactory.verifyItsSameBrowser(AbstractDriverFactory.java:94)
-	at com.codeborne.selenide.webdriver.AbstractDriverFactory.merge(AbstractDriverFactory.java:88)
-	at com.codeborne.selenide.webdriver.AbstractDriverFactory.createCommonCapabilities(AbstractDriverFactory.java:81)
-	at com.codeborne.selenide.webdriver.SafariDriverFactory.createCapabilities(SafariDriverFactory.java:50)
-	at com.codeborne.selenide.webdriver.SafariDriverFactory.create(SafariDriverFactory.java:30)
-	at com.codeborne.selenide.webdriver.WebDriverFactory.createWebDriverInstance(WebDriverFactory.java:119)
-	at com.codeborne.selenide.webdriver.WebDriverFactory.createWebDriver(WebDriverFactory.java:67)
-	at com.codeborne.selenide.drivercommands.CreateDriverCommand.lambda$createDriver$0(CreateDriverCommand.java:76)
-	at com.codeborne.selenide.logevents.SelenideLogger.get(SelenideLogger.java:166)
-	at com.codeborne.selenide.drivercommands.CreateDriverCommand.createDriver(CreateDriverCommand.java:52)
-	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer.createDriver(WebDriverThreadLocalContainer.java:180)
-	at com.codeborne.selenide.impl.WebDriverThreadLocalContainer.getAndCheckWebDriver(WebDriverThreadLocalContainer.java:149)
-	at com.codeborne.selenide.WebDriverRunner.getAndCheckWebDriver(WebDriverRunner.java:130)
-	at com.codeborne.selenide.impl.StaticDriver.getAndCheckWebDriver(StaticDriver.java:65)
-	at com.codeborne.selenide.SelenideDriver.getAndCheckWebDriver(SelenideDriver.java:220)
-	at com.codeborne.selenide.drivercommands.Navigator.lambda$navigateTo$0(Navigator.java:72)
-	at com.codeborne.selenide.logevents.SelenideLogger.run(SelenideLogger.java:153)
+<h2>rahul selenium to selenide cucumber </h2><h3 id="m0">testRunners.CucumberTestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Get titles of the opened tabs&quot;</td><td>&quot;AutomationPractice page tests&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;13.1&apos;, java.version: &apos;18.0.2&apos;
+Driver info: org.openqa.selenium.safari.SafariDriver
+Command: [79D26E15-EF24-4905-A1C5-A5623F0226FD, get {url=https://rahulshettyacademy.com/AutomationPractice/}]
+selenide.url: https://rahulshettyacademy.com/AutomationPractice/
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 16.2, pageLoadStrategy: normal, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, safari:platformBuildVersion: 22C65, safari:platformVersion: 13.1, safari:useSimulator: false, setWindowRect: true, strictFileInteractability: false, unhandledPromptBehavior: accept, webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+selenide.baseUrl: https://rahulshettyacademy.com
+Session ID: 79D26E15-EF24-4905-A1C5-A5623F0226FD
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:982)
+	at com.codeborne.selenide.drivercommands.Navigator.lambda$navigateTo$0(Navigator.java:74)
+	at com.codeborne.selenide.logevents.SelenideLogger.run(SelenideLogger.java:105)
 	at com.codeborne.selenide.drivercommands.Navigator.navigateTo(Navigator.java:70)
 	at com.codeborne.selenide.drivercommands.Navigator.open(Navigator.java:32)
 	at com.codeborne.selenide.SelenideDriver.open(SelenideDriver.java:101)
-	at com.codeborne.selenide.Selenide.open(Selenide.java:52)
-	at steps.SharedStepsDefinition.i_open_something_page(SharedStepsDefinition.java:44)
-	at ✽.I open &quot;Path2Usa&quot; page(file:///Users/filip/IntelliJ%20projects/RahulUdemy/src/test/java/features/Path2UsaTests.feature:4)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at com.codeborne.selenide.Selenide.open(Selenide.java:53)
+	at steps.SharedStepsDefinition.i_open_something_page(SharedStepsDefinition.java:34)
+	at ✽.I open &quot;Automation practice&quot; page(file:///Users/filip/IntelliJ%20projects/RahulUdemy/src/test/java/features/AutomationPracticePageTests.feature:23)
+... Removed 3 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">testRunners.CucumberTestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Find element in element&quot;</td><td>&quot;AutomationPractice page tests&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;13.1&apos;, java.version: &apos;18.0.2&apos;
+Driver info: org.openqa.selenium.safari.SafariDriver
+Command: [79D26E15-EF24-4905-A1C5-A5623F0226FD, get {url=https://rahulshettyacademy.com/AutomationPractice/}]
+selenide.url: https://rahulshettyacademy.com/AutomationPractice/
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 16.2, pageLoadStrategy: normal, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, safari:platformBuildVersion: 22C65, safari:platformVersion: 13.1, safari:useSimulator: false, setWindowRect: true, strictFileInteractability: false, unhandledPromptBehavior: accept, webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+selenide.baseUrl: https://rahulshettyacademy.com
+Session ID: 79D26E15-EF24-4905-A1C5-A5623F0226FD
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:982)
+	at com.codeborne.selenide.drivercommands.Navigator.lambda$navigateTo$0(Navigator.java:74)
+	at com.codeborne.selenide.logevents.SelenideLogger.run(SelenideLogger.java:105)
+	at com.codeborne.selenide.drivercommands.Navigator.navigateTo(Navigator.java:70)
+	at com.codeborne.selenide.drivercommands.Navigator.open(Navigator.java:32)
+	at com.codeborne.selenide.SelenideDriver.open(SelenideDriver.java:101)
+	at com.codeborne.selenide.Selenide.open(Selenide.java:53)
+	at steps.SharedStepsDefinition.i_open_something_page(SharedStepsDefinition.java:34)
+	at ✽.I open &quot;Automation practice&quot; page(file:///Users/filip/IntelliJ%20projects/RahulUdemy/src/test/java/features/AutomationPracticePageTests.feature:17)
+... Removed 3 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">testRunners.CucumberTestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Dismiss alert&quot;</td><td>&quot;AutomationPractice page tests&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">org.openqa.selenium.TimeoutException: Build info: version: &apos;4.8.3&apos;, revision: &apos;e5e76298c3&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;13.1&apos;, java.version: &apos;18.0.2&apos;
+Driver info: org.openqa.selenium.safari.SafariDriver
+Command: [79D26E15-EF24-4905-A1C5-A5623F0226FD, get {url=https://rahulshettyacademy.com/AutomationPractice/}]
+selenide.url: https://rahulshettyacademy.com/AutomationPractice/
+Capabilities {acceptInsecureCerts: false, browserName: Safari, browserVersion: 16.2, pageLoadStrategy: normal, platformName: MAC, safari:automaticInspection: false, safari:automaticProfiling: false, safari:diagnose: false, safari:platformBuildVersion: 22C65, safari:platformVersion: 13.1, safari:useSimulator: false, setWindowRect: true, strictFileInteractability: false, unhandledPromptBehavior: accept, webkit:WebRTC: {DisableICECandidateFiltering: false, DisableInsecureMediaCapture: false}}
+selenide.baseUrl: https://rahulshettyacademy.com
+Session ID: 79D26E15-EF24-4905-A1C5-A5623F0226FD
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:193)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:183)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteNavigation.to(RemoteWebDriver.java:982)
+	at com.codeborne.selenide.drivercommands.Navigator.lambda$navigateTo$0(Navigator.java:74)
+	at com.codeborne.selenide.logevents.SelenideLogger.run(SelenideLogger.java:105)
+	at com.codeborne.selenide.drivercommands.Navigator.navigateTo(Navigator.java:70)
+	at com.codeborne.selenide.drivercommands.Navigator.open(Navigator.java:32)
+	at com.codeborne.selenide.SelenideDriver.open(SelenideDriver.java:101)
+	at com.codeborne.selenide.Selenide.open(Selenide.java:53)
+	at steps.SharedStepsDefinition.i_open_something_page(SharedStepsDefinition.java:34)
+	at ✽.I open &quot;Automation practice&quot; page(file:///Users/filip/IntelliJ%20projects/RahulUdemy/src/test/java/features/AutomationPracticePageTests.feature:10)
+... Removed 3 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">testRunners.CucumberTestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Check response codes of all prelinks in footer&quot;</td><td>&quot;AutomationPractice page tests&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: The following asserts failed:
+	Link REST APIGcv has response code 301 expected [true] but found [false],
+	Link Broken Linkerj has response code 404 expected [true] but found [false]
+	at steps.AutomationPracticeStepDefinition.i_check_http_code_should_be_something(AutomationPracticeStepDefinition.java:166)
+	at ✽.I check HTTP codes should be &quot;200&quot;(file:///Users/filip/IntelliJ%20projects/RahulUdemy/src/test/java/features/AutomationPracticePageTests.feature:42)
+... Removed 2 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">testRunners.CucumberTestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Accept alert&quot;</td><td>&quot;AutomationPractice page tests&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">testRunners.CucumberTestNGRunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Check response code of broken link&quot;</td><td>&quot;AutomationPractice page tests&quot;</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

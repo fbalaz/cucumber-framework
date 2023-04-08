@@ -8,6 +8,7 @@ import utilities.TestContextSetup;
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class AmazonStepsDefinition {
     private TestContextSetup testContextSetup;
