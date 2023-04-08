@@ -1,6 +1,8 @@
 package hooks;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
+import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
@@ -32,6 +34,11 @@ public class Hooks {
         //ChromeOptions opt = new ChromeOptions();
         //Configuration.browserCapabilities = opt.addArguments("--incognito");
 
+    }
+
+    @After
+    public void tearDown() {
+        WebDriverRunner.closeWebDriver();
     }
 
     @AfterStep
