@@ -8,7 +8,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.KroneHomePage;
+import utilities.GenericUtils;
 import utilities.TestContextSetup;
+
+import java.util.Properties;
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
@@ -16,10 +20,14 @@ public class KroneDemoSteps {
 
     private final TestContextSetup testContextSetup;
     private final KroneHomePage kroneHomePage;
+    private final Properties properties;
+    private final GenericUtils genericUtils;
 
     public KroneDemoSteps(TestContextSetup testContextSetup) {
         this.testContextSetup = testContextSetup;
         this.kroneHomePage = testContextSetup.pageObjectManager.getKroneHomePage();
+        this.genericUtils = testContextSetup.genericUtils;
+        this.properties = genericUtils.getProp();
     }
 
     @When("^I scroll to the \"([^\"]*)\" of the page$")
@@ -60,11 +68,11 @@ public class KroneDemoSteps {
         String expectedUrl;
         switch (urlId) {
             case "Linkedin":
-                expectedUrl = "https://www.linkedin.com/company/kroneconsulting/";
+                expectedUrl = properties.getProperty("linkedin_url");
                 Assert.assertEquals(url(),expectedUrl);
                 break;
             case "Instagram":
-                expectedUrl = "https://www.instagram.com/krone.consulting/";
+                expectedUrl = properties.getProperty("instagram_url");
                 Assert.assertEquals(url(),expectedUrl);
         }
     }
